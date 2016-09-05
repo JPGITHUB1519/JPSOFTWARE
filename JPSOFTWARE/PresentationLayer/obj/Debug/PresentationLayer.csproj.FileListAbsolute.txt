@@ -1,0 +1,16 @@
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\bin\Debug\PresentationLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\bin\Debug\PresentationLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\bin\Debug\BusinessLogicLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.Principal.resources
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.Properties.Resources.resources
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.csproj.GenerateResource.Cache
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PMantBase.resources
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PMantCliente.resources

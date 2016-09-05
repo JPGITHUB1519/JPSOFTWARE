@@ -1,0 +1,4 @@
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

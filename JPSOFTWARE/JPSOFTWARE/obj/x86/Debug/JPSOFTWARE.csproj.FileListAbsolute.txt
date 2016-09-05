@@ -1,0 +1,15 @@
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\JPSOFTWARE.exe
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\JPSOFTWARE.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\PresentationLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\PresentationLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\obj\x86\Debug\JPSOFTWARE.csprojResolveAssemblyReference.cache
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\obj\x86\Debug\JPSOFTWARE.Properties.Resources.resources
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\obj\x86\Debug\JPSOFTWARE.csproj.GenerateResource.Cache
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\obj\x86\Debug\JPSOFTWARE.exe
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\obj\x86\Debug\JPSOFTWARE.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\BusinessLogicLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\EntitiesLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\DataAccessLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\EntitiesLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPSOFTWARE\bin\Debug\DataAccessLayer.pdb

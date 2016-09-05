@@ -1,0 +1,8 @@
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\DataAccessLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\DataAccessLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
