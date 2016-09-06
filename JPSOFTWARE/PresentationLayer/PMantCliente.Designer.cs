@@ -42,13 +42,44 @@
             this.txtcodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabplistado.SuspendLayout();
+            this.tabpmantenimiento.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label8
+            // 
+            this.label8.Size = new System.Drawing.Size(324, 29);
+            this.label8.Text = "Mantenimiento de Clientes";
+            // 
+            // tabplistado
+            // 
+            this.tabplistado.Controls.Add(this.dgvdata);
+            this.tabplistado.Click += new System.EventHandler(this.tabPage2_Click);
+            this.tabplistado.Controls.SetChildIndex(this.btn_buscar2, 0);
+            this.tabplistado.Controls.SetChildIndex(this.label2, 0);
+            this.tabplistado.Controls.SetChildIndex(this.txtbuscar, 0);
+            this.tabplistado.Controls.SetChildIndex(this.btnimprimir, 0);
+            this.tabplistado.Controls.SetChildIndex(this.dgvdata, 0);
+            // 
+            // btn_buscar2
+            // 
+            this.btn_buscar2.Click += new System.EventHandler(this.btn_buscar2_Click);
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox1
             // 
@@ -66,33 +97,6 @@
             this.groupBox1.Controls.Add(this.txtcodigo);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Text = "Clientes";
-            // 
-            // button7
-            // 
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button5
-            // 
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // label8
-            // 
-            this.label8.Size = new System.Drawing.Size(324, 29);
-            this.label8.Text = "Mantenimiento de Clientes";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dgvdata);
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            this.tabPage2.Controls.SetChildIndex(this.button2, 0);
-            this.tabPage2.Controls.SetChildIndex(this.label2, 0);
-            this.tabPage2.Controls.SetChildIndex(this.textBox3, 0);
-            this.tabPage2.Controls.SetChildIndex(this.button3, 0);
-            this.tabPage2.Controls.SetChildIndex(this.dgvdata, 0);
             // 
             // txttelefono
             // 
@@ -195,6 +199,7 @@
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(191, 20);
             this.txtcodigo.TabIndex = 77;
+            this.txtcodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodigo_Validating);
             // 
             // label3
             // 
@@ -213,6 +218,7 @@
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.Size = new System.Drawing.Size(656, 374);
             this.dgvdata.TabIndex = 74;
+            this.dgvdata.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellDoubleClick);
             // 
             // PMantCliente
             // 
@@ -222,12 +228,12 @@
             this.Name = "PMantCliente";
             this.Text = "PMantCliente";
             this.Load += new System.EventHandler(this.PMantCliente_Load);
+            this.tabplistado.ResumeLayout(false);
+            this.tabplistado.PerformLayout();
+            this.tabpmantenimiento.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.ResumeLayout(false);

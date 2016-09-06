@@ -16,31 +16,38 @@ namespace BusinessLogicLayer
 
         public string Act_Cliente(ECliente cliente)
         {
-            string rpta = "";
-            List<string> lista_errores = new List<string>();
-            lista_errores = validar_cliente(cliente);
-            
-            if (lista_errores.Count() != 0)
-            {
-                rpta = data_cliente.Act_Cliente(cliente);
-            }
-            else
-            {
-                rpta = "Debe llenar Todos los Campos";
-            }
-            return rpta;
+            return data_cliente.Act_Cliente(cliente);
         }
+
         public DataSet Select_Cliente()
         {
-            DataSet ds = new DataSet();
-            if (lista_errores.Count() != 0)
-            {
-                ds = data_cliente.Select_Cliente();
-            }
-
-            return ds;
-
+            return data_cliente.Select_Cliente();
         }
+
+        public string Delete_Cliente(ECliente cliente)
+        {
+            return data_cliente.Delete_Cliente(cliente);
+        }
+
+        public DataSet FilterbyID(ECliente cliente)
+        {
+            return data_cliente.FilterbyID(cliente);
+        }
+
+        public DataSet FilterByName(ECliente cliente)
+        {
+            return data_cliente.FilterByName(cliente);
+        }
+
+        /*
+        public string Delete_Cliente(ECliente cliente)
+        {
+            string rpta = "";
+            List<string> Lista_Errores = new 
+        }
+        */
+
+        /* validacion 
         public List<string> validar_cliente(ECliente cliente)
         {
             // FORCE PARA VALIDAR INT -> CONVERTIRLO A STRING Y LUEGO PREGUNTAR
@@ -71,5 +78,6 @@ namespace BusinessLogicLayer
 
             return lista_errores;
         }
+         * */
     }
 }

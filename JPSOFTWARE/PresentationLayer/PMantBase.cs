@@ -21,5 +21,15 @@ namespace PresentationLayer
         {
 
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = tabplistado;
+        }
     }
 }

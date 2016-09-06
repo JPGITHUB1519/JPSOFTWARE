@@ -18,6 +18,23 @@ namespace PresentationLayer
             InitializeComponent();
         }
         private BCliente bus_cliente = new BCliente();
+
+        // obtener datos de usuario
+        public ECliente get_data()
+        {
+            ECliente cliente = new ECliente();
+            // obteniendo datos de usuario
+            cliente.Idcliente = Convert.ToInt32(this.txtcodigo.Text.Trim());
+            cliente.Nombre = this.txtnombre.Text.Trim();
+            cliente.Apellido = this.txtapellido.Text.Trim();
+            cliente.Direccion = this.txtdireccion.Text.Trim();
+            cliente.Telefono = this.txttelefono.Text.Trim();
+            cliente.Email = this.txtemail.Text.Trim();
+            cliente.Status = this.chkestatus.Checked;
+            return cliente;
+        }
+        
+        // metodo para vaciar campos
         public void limpiar_campos()
         {
             this.txtcodigo.Text = string.Empty;
@@ -30,27 +47,21 @@ namespace PresentationLayer
             this.chkestatus.Checked = false;
         }
 
+        // metodo para llenar grid
         public void fill_grid()
         {
-            this.dgvdata.DataSource = bus_cliente.Select_Cliente();
- 
+            this.dgvdata.DataSource = bus_cliente.Select_Cliente().Tables[0];
         }
         private void PMantCliente_Load(object sender, EventArgs e)
         {
-            fill_grid();
+           this.fill_grid();
 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             ECliente cliente = new ECliente();
-            // obteniendo datos de usuario
-            cliente.Idcliente = Convert.ToInt32(this.txtcodigo.Text.Trim());
-            cliente.Nombre = this.txtnombre.Text.Trim();
-            cliente.Apellido = this.txtapellido.Text.Trim();
-            cliente.Direccion = this.txtdireccion.Text.Trim();
-            cliente.Telefono = this.txttelefono.Text.Trim();
-            cliente.Email = this.txtemail.Text.Trim();
+            cliente = get_data();
             MessageBox.Show(bus_cliente.Act_Cliente(cliente));
         }
 
@@ -61,12 +72,72 @@ namespace PresentationLayer
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            ECliente cliente = new ECliente();
+            cliente = get_data();
+            string rpta = bus_cliente.Delete_Cliente(cliente);
+            MessageBox.Show(rpta);
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtcodigo_Validating(object sender, CancelEventArgs e)
+        {
+            // si existe el id ingresado completar automaticamente con los datos del registro
+            ECliente cliente = this.get_data();
+            DataSet ds = new DataSet();
+            ds = bus_cliente.FilterbyID(cliente);
+            if (utilites_presentation.isdataset_empty(ds) == false)
+            {
+                // llenando textbox desde los datos del dataset
+                this.txtnombre.Text = ds.Tables[0].Rows[0]["nombre"].ToString();
+                this.txtapellido.Text = ds.Tables[0].Rows[0]["apellido"].ToString();
+                this.txtdireccion.Text = ds.Tables[0].Rows[0]["direccion"].ToString();
+                this.txttelefono.Text = ds.Tables[0].Rows[0]["telefono"].ToString();
+                this.txtemail.Text = ds.Tables[0].Rows[0]["email"].ToString();
+                string aux = ds.Tables[0].Rows[0]["estatus"].ToString();
+                this.chkestatus.Checked = aux.Equals("") ? false : true;
+
+                
+            }
+            else
+            {
+                // limpiamos las cajas menos la de id para nuevo registro
+                this.txtnombre.Text = string.Empty;
+                this.txtapellido.Text = string.Empty;
+                this.txtdireccion.Text = string.Empty;
+                this.txttelefono.Text = string.Empty;
+                this.txtemail.Text = string.Empty;
+                this.chkestatus.Checked = false;
+            }
+        }
+
+        private void btn_buscar2_Click(object sender, EventArgs e)
+        {
+            ECliente cliente = new ECliente();
+            cliente.Nombre = this.txtbuscar.Text.Trim();
+            // filling datagriview with filter data
+            this.dgvdata.DataSource = bus_cliente.FilterByName(cliente).Tables[0];
+            
+        }
+
+        private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.txtcodigo.Text = dgvdata.Rows[e.RowIndex].Cells["idcliente"].Value.ToString();
+            this.txtnombre.Text = dgvdata.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
+            this.txtapellido.Text = dgvdata.Rows[e.RowIndex].Cells["apellido"].Value.ToString();
+            this.txtdireccion.Text = dgvdata.Rows[e.RowIndex].Cells["direccion"].Value.ToString();
+            this.txttelefono.Text = dgvdata.Rows[e.RowIndex].Cells["telefono"].Value.ToString();
+            this.txtemail.Text = dgvdata.Rows[e.RowIndex].Cells["email"].Value.ToString();
+            this.chkestatus.Checked = Convert.ToBoolean(dgvdata.Rows[e.RowIndex].Cells["estatus"].Value);
+            this.tabControl1.SelectedTab = this.tabpmantenimiento;
         }
     }
 }

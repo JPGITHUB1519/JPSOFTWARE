@@ -67,10 +67,9 @@ namespace DataAccessLayer
 
         public DataSet Select_Cliente()
         {
-            string rpta;
             DataSet ds = new DataSet();
             try
-            { 
+            {
                 string query = "SP_SELECT_CLIENTE";
                 ds = dbconnection.execute_query(query);
             }
@@ -84,7 +83,6 @@ namespace DataAccessLayer
 
         public DataSet FilterbyID(ECliente cliente)
         {
-            string rpta;
             DataSet ds = new DataSet();
 
             try
@@ -101,6 +99,26 @@ namespace DataAccessLayer
 
             return ds;
         }
+
+        public DataSet FilterByName(ECliente cliente)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                string query = "SP_FILTERBYNAME_CLIENTE";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@nombre", cliente.Nombre);
+                ds = dbconnection.execute_query(query, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+            }
+
+            return ds;
+        }
+
 
         
     }
