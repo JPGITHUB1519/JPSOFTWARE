@@ -28,25 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label8 = new System.Windows.Forms.Label();
             this.tabplistado = new System.Windows.Forms.TabPage();
-            this.btn_buscar2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.btnimprimir = new System.Windows.Forms.Button();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_buscar2 = new System.Windows.Forms.Button();
             this.tabpmantenimiento = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btncancelar = new System.Windows.Forms.Button();
-            this.btnsalir = new System.Windows.Forms.Button();
-            this.btneliminar = new System.Windows.Forms.Button();
             this.btnbuscar = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.btnsalir = new System.Windows.Forms.Button();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.errprov = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabplistado.SuspendLayout();
             this.tabpmantenimiento.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errprov)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -74,14 +77,21 @@
             this.tabplistado.Text = "Listado";
             this.tabplistado.UseVisualStyleBackColor = true;
             // 
-            // btn_buscar2
+            // btnimprimir
             // 
-            this.btn_buscar2.Image = global::PresentationLayer.Properties.Resources.search;
-            this.btn_buscar2.Location = new System.Drawing.Point(483, 6);
-            this.btn_buscar2.Name = "btn_buscar2";
-            this.btn_buscar2.Size = new System.Drawing.Size(106, 72);
-            this.btn_buscar2.TabIndex = 71;
-            this.btn_buscar2.UseVisualStyleBackColor = true;
+            this.btnimprimir.Image = global::PresentationLayer.Properties.Resources.print;
+            this.btnimprimir.Location = new System.Drawing.Point(595, 6);
+            this.btnimprimir.Name = "btnimprimir";
+            this.btnimprimir.Size = new System.Drawing.Size(106, 72);
+            this.btnimprimir.TabIndex = 73;
+            this.btnimprimir.UseVisualStyleBackColor = true;
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.Location = new System.Drawing.Point(141, 30);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(318, 20);
+            this.txtbuscar.TabIndex = 12;
             // 
             // label2
             // 
@@ -93,21 +103,14 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Buscar";
             // 
-            // txtbuscar
+            // btn_buscar2
             // 
-            this.txtbuscar.Location = new System.Drawing.Point(141, 30);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(318, 20);
-            this.txtbuscar.TabIndex = 12;
-            // 
-            // btnimprimir
-            // 
-            this.btnimprimir.Image = global::PresentationLayer.Properties.Resources.print;
-            this.btnimprimir.Location = new System.Drawing.Point(595, 6);
-            this.btnimprimir.Name = "btnimprimir";
-            this.btnimprimir.Size = new System.Drawing.Size(106, 72);
-            this.btnimprimir.TabIndex = 73;
-            this.btnimprimir.UseVisualStyleBackColor = true;
+            this.btn_buscar2.Image = global::PresentationLayer.Properties.Resources.search;
+            this.btn_buscar2.Location = new System.Drawing.Point(483, 6);
+            this.btn_buscar2.Name = "btn_buscar2";
+            this.btn_buscar2.Size = new System.Drawing.Size(106, 72);
+            this.btn_buscar2.TabIndex = 71;
+            this.btn_buscar2.UseVisualStyleBackColor = true;
             // 
             // tabpmantenimiento
             // 
@@ -120,15 +123,6 @@
             this.tabpmantenimiento.TabIndex = 0;
             this.tabpmantenimiento.Text = "Mantenimiento";
             this.tabpmantenimiento.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(6, 26);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(737, 387);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "CAMBIAR";
             // 
             // groupBox2
             // 
@@ -144,43 +138,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Image = global::PresentationLayer.Properties.Resources.save;
-            this.btnNuevo.Location = new System.Drawing.Point(15, 19);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(106, 72);
-            this.btnNuevo.TabIndex = 7;
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btncancelar
-            // 
-            this.btncancelar.Image = global::PresentationLayer.Properties.Resources.Undo_icon;
-            this.btncancelar.Location = new System.Drawing.Point(351, 19);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(106, 72);
-            this.btncancelar.TabIndex = 10;
-            this.btncancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnsalir
-            // 
-            this.btnsalir.Image = global::PresentationLayer.Properties.Resources.User_Interface_Login_icon;
-            this.btnsalir.Location = new System.Drawing.Point(463, 19);
-            this.btnsalir.Name = "btnsalir";
-            this.btnsalir.Size = new System.Drawing.Size(106, 72);
-            this.btnsalir.TabIndex = 11;
-            this.btnsalir.UseVisualStyleBackColor = true;
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.Image = global::PresentationLayer.Properties.Resources.delete;
-            this.btneliminar.Location = new System.Drawing.Point(127, 19);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(106, 72);
-            this.btneliminar.TabIndex = 8;
-            this.btneliminar.UseVisualStyleBackColor = true;
-            // 
             // btnbuscar
             // 
             this.btnbuscar.Image = global::PresentationLayer.Properties.Resources.search;
@@ -191,6 +148,52 @@
             this.btnbuscar.UseVisualStyleBackColor = true;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
+            // btneliminar
+            // 
+            this.btneliminar.Image = global::PresentationLayer.Properties.Resources.delete;
+            this.btneliminar.Location = new System.Drawing.Point(127, 19);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(106, 72);
+            this.btneliminar.TabIndex = 8;
+            this.btneliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.Image = global::PresentationLayer.Properties.Resources.User_Interface_Login_icon;
+            this.btnsalir.Location = new System.Drawing.Point(463, 19);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(106, 72);
+            this.btnsalir.TabIndex = 11;
+            this.btnsalir.UseVisualStyleBackColor = true;
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.Image = global::PresentationLayer.Properties.Resources.Undo_icon;
+            this.btncancelar.Location = new System.Drawing.Point(351, 19);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(106, 72);
+            this.btncancelar.TabIndex = 10;
+            this.btncancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = global::PresentationLayer.Properties.Resources.save;
+            this.btnNuevo.Location = new System.Drawing.Point(15, 19);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(106, 72);
+            this.btnNuevo.TabIndex = 7;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(6, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(737, 387);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "CAMBIAR";
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabpmantenimiento);
@@ -200,6 +203,10 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(772, 587);
             this.tabControl1.TabIndex = 44;
+            // 
+            // errprov
+            // 
+            this.errprov.ContainerControl = this;
             // 
             // PMantBase
             // 
@@ -217,6 +224,7 @@
             this.tabpmantenimiento.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errprov)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,6 +247,7 @@
         public System.Windows.Forms.Button btnNuevo;
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.ErrorProvider errprov;
 
     }
 }

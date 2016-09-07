@@ -60,9 +60,26 @@ namespace PresentationLayer
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            string rpta = "";
             ECliente cliente = new ECliente();
+            if (utilites_presentation.validar(this, this.errprov) == true)
+            {
+                return;
+            }
             cliente = get_data();
-            MessageBox.Show(bus_cliente.Act_Cliente(cliente));
+            rpta = bus_cliente.Act_Cliente(cliente);
+            // si el registro fue correcto
+            if (string.Compare(rpta, "REGISTRO REGISTRADO/ACTUALIZADO EXITOSAMENTE") == 0)
+            {
+                utilites_presentation.mensaje_ok(rpta);
+                // llenar grilla despues de actualizar
+                this.fill_grid();
+            }
+            else
+            {
+                utilites_presentation.mensaje_error(rpta);
+            }
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -138,6 +155,21 @@ namespace PresentationLayer
             this.txtemail.Text = dgvdata.Rows[e.RowIndex].Cells["email"].Value.ToString();
             this.chkestatus.Checked = Convert.ToBoolean(dgvdata.Rows[e.RowIndex].Cells["estatus"].Value);
             this.tabControl1.SelectedTab = this.tabpmantenimiento;
+        }
+
+        private void tabpmantenimiento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txttelefono = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
             this.label6 = new System.Windows.Forms.Label();
             this.chkestatus = new System.Windows.Forms.CheckBox();
-            this.txtemail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtdireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtnombre = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtapellido = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtcodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvdata = new System.Windows.Forms.DataGridView();
+            this.txtcodigo = new PresentationLayer.jptextbox(this.components);
+            this.txtnombre = new PresentationLayer.jptextbox(this.components);
+            this.txtapellido = new PresentationLayer.jptextbox(this.components);
+            this.txtdireccion = new PresentationLayer.jptextbox(this.components);
+            this.txttelefono = new PresentationLayer.jptextbox(this.components);
+            this.txtemail = new PresentationLayer.jptextbox(this.components);
             this.tabplistado.SuspendLayout();
             this.tabpmantenimiento.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errprov)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +71,10 @@
             // 
             this.btn_buscar2.Click += new System.EventHandler(this.btn_buscar2_Click);
             // 
+            // tabpmantenimiento
+            // 
+            this.tabpmantenimiento.Click += new System.EventHandler(this.tabpmantenimiento_Click);
+            // 
             // btneliminar
             // 
             this.btneliminar.Click += new System.EventHandler(this.button7_Click);
@@ -83,27 +89,20 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtemail);
             this.groupBox1.Controls.Add(this.txttelefono);
+            this.groupBox1.Controls.Add(this.txtdireccion);
+            this.groupBox1.Controls.Add(this.txtapellido);
+            this.groupBox1.Controls.Add(this.txtnombre);
+            this.groupBox1.Controls.Add(this.txtcodigo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.chkestatus);
-            this.groupBox1.Controls.Add(this.txtemail);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtdireccion);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtnombre);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtapellido);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtcodigo);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Text = "Clientes";
-            // 
-            // txttelefono
-            // 
-            this.txttelefono.Location = new System.Drawing.Point(326, 237);
-            this.txttelefono.Name = "txttelefono";
-            this.txttelefono.Size = new System.Drawing.Size(191, 20);
-            this.txttelefono.TabIndex = 81;
             // 
             // label6
             // 
@@ -125,13 +124,6 @@
             this.chkestatus.Text = "Estatus";
             this.chkestatus.UseVisualStyleBackColor = true;
             // 
-            // txtemail
-            // 
-            this.txtemail.Location = new System.Drawing.Point(326, 293);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(191, 20);
-            this.txtemail.TabIndex = 82;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -141,13 +133,6 @@
             this.label1.Size = new System.Drawing.Size(48, 20);
             this.label1.TabIndex = 88;
             this.label1.Text = "Email";
-            // 
-            // txtdireccion
-            // 
-            this.txtdireccion.Location = new System.Drawing.Point(326, 184);
-            this.txtdireccion.Name = "txtdireccion";
-            this.txtdireccion.Size = new System.Drawing.Size(191, 20);
-            this.txtdireccion.TabIndex = 80;
             // 
             // label4
             // 
@@ -159,13 +144,6 @@
             this.label4.TabIndex = 87;
             this.label4.Text = "Direccion";
             // 
-            // txtnombre
-            // 
-            this.txtnombre.Location = new System.Drawing.Point(326, 81);
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(191, 20);
-            this.txtnombre.TabIndex = 78;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -176,13 +154,6 @@
             this.label7.TabIndex = 86;
             this.label7.Text = "Nombre";
             // 
-            // txtapellido
-            // 
-            this.txtapellido.Location = new System.Drawing.Point(326, 134);
-            this.txtapellido.Name = "txtapellido";
-            this.txtapellido.Size = new System.Drawing.Size(191, 20);
-            this.txtapellido.TabIndex = 79;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -192,14 +163,6 @@
             this.label5.Size = new System.Drawing.Size(65, 20);
             this.label5.TabIndex = 85;
             this.label5.Text = "Apellido";
-            // 
-            // txtcodigo
-            // 
-            this.txtcodigo.Location = new System.Drawing.Point(326, 30);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(191, 20);
-            this.txtcodigo.TabIndex = 77;
-            this.txtcodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodigo_Validating);
             // 
             // label3
             // 
@@ -220,6 +183,55 @@
             this.dgvdata.TabIndex = 74;
             this.dgvdata.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellDoubleClick);
             // 
+            // txtcodigo
+            // 
+            this.txtcodigo.Location = new System.Drawing.Point(326, 30);
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Size = new System.Drawing.Size(191, 20);
+            this.txtcodigo.TabIndex = 90;
+            this.txtcodigo.validar = true;
+            this.txtcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodigo_KeyPress);
+            // 
+            // txtnombre
+            // 
+            this.txtnombre.Location = new System.Drawing.Point(326, 79);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(191, 20);
+            this.txtnombre.TabIndex = 91;
+            this.txtnombre.validar = true;
+            // 
+            // txtapellido
+            // 
+            this.txtapellido.Location = new System.Drawing.Point(326, 132);
+            this.txtapellido.Name = "txtapellido";
+            this.txtapellido.Size = new System.Drawing.Size(191, 20);
+            this.txtapellido.TabIndex = 92;
+            this.txtapellido.validar = true;
+            // 
+            // txtdireccion
+            // 
+            this.txtdireccion.Location = new System.Drawing.Point(326, 186);
+            this.txtdireccion.Name = "txtdireccion";
+            this.txtdireccion.Size = new System.Drawing.Size(191, 20);
+            this.txtdireccion.TabIndex = 93;
+            this.txtdireccion.validar = true;
+            // 
+            // txttelefono
+            // 
+            this.txttelefono.Location = new System.Drawing.Point(326, 237);
+            this.txttelefono.Name = "txttelefono";
+            this.txttelefono.Size = new System.Drawing.Size(191, 20);
+            this.txttelefono.TabIndex = 94;
+            this.txttelefono.validar = true;
+            // 
+            // txtemail
+            // 
+            this.txtemail.Location = new System.Drawing.Point(326, 293);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(191, 20);
+            this.txtemail.TabIndex = 95;
+            this.txtemail.validar = true;
+            // 
             // PMantCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +247,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errprov)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -243,19 +256,19 @@
 
         #endregion
 
-        public System.Windows.Forms.TextBox txttelefono;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.CheckBox chkestatus;
-        public System.Windows.Forms.TextBox txtemail;
         public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txtdireccion;
         public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox txtnombre;
         public System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox txtapellido;
         public System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox txtcodigo;
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvdata;
+        private jptextbox txtemail;
+        private jptextbox txttelefono;
+        private jptextbox txtdireccion;
+        private jptextbox txtapellido;
+        private jptextbox txtnombre;
+        private jptextbox txtcodigo;
     }
 }

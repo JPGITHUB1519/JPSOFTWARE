@@ -27,5 +27,54 @@ namespace PresentationLayer
             return false;
         }
 
+        // return True if empty
+        public static bool validar(Control frm, ErrorProvider errorp)
+        {
+            bool cond = false;
+            foreach (Control obj in frm.Controls)
+            {
+                if (obj.Controls.Count > 0)
+                {
+                    cond = validar(obj, errorp);
+                }
+                else
+                {
+                    if (obj is jptextbox)
+                    {
+                        jptextbox obj2 = (jptextbox)obj;
+
+                        if (obj2.validar)
+                        {
+
+                            if (String.IsNullOrEmpty(obj2.Text.Trim()))
+                            {
+                                errorp.SetError(obj, "Campo obligatorio");
+                                cond = true;
+                            }
+                            else
+                            {
+                                errorp.SetError(obj, "");
+                            }
+
+                        }
+                    }
+
+                }
+            }
+            return cond;
+        }
+
+        public bool isint(string num)
+        {
+            try
+            {
+                Int32.Parse(num);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
