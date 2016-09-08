@@ -1,0 +1,11 @@
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\bin\JPWEB.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\bin\JPWEB.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\bin\BusinessLogicLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\bin\EntitiesLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\bin\DataAccessLayer.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\bin\BusinessLogicLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\bin\EntitiesLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\bin\DataAccessLayer.pdb
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\obj\Debug\JPWEB.csprojResolveAssemblyReference.cache
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\obj\Debug\JPWEB.dll
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\JPWEB\obj\Debug\JPWEB.pdb
