@@ -47,6 +47,16 @@ namespace PresentationLayer
             this.chkestatus.Checked = false;
         }
 
+        public void emptyfields_less_codigo()
+        {
+            this.txtnombre.Text = string.Empty;
+            this.txtapellido.Text = string.Empty;
+            this.txtdireccion.Text = string.Empty;
+            this.txttelefono.Text = string.Empty;
+            this.txtemail.Text = string.Empty;
+            this.chkestatus.Checked = false;
+        }
+
         // metodo para llenar grid
         public void fill_grid()
         {
@@ -85,6 +95,7 @@ namespace PresentationLayer
         private void button5_Click(object sender, EventArgs e)
         {
             this.limpiar_campos();
+            this.txtcodigo.Focus();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -92,7 +103,8 @@ namespace PresentationLayer
             ECliente cliente = new ECliente();
             cliente = get_data();
             string rpta = bus_cliente.Delete_Cliente(cliente);
-            MessageBox.Show(rpta);
+            utilites_presentation.mensaje_ok(rpta);
+            this.fill_grid();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -126,13 +138,8 @@ namespace PresentationLayer
             }
             else
             {
-                // limpiamos las cajas menos la de id para nuevo registro
-                this.txtnombre.Text = string.Empty;
-                this.txtapellido.Text = string.Empty;
-                this.txtdireccion.Text = string.Empty;
-                this.txttelefono.Text = string.Empty;
-                this.txtemail.Text = string.Empty;
-                this.chkestatus.Checked = false;
+               // limpiamos las cajas menos la de id para nuevo registro
+                this.emptyfields_less_codigo();
             }
         }
 
@@ -170,6 +177,35 @@ namespace PresentationLayer
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void txtcodigo_Validating_1(object sender, CancelEventArgs e)
+        {
+            // fill customer data in validate method
+            ECliente cliente = new ECliente();
+            // if txt codigo is empty go out
+            if (txtcodigo.Text != string.Empty)
+                cliente.Idcliente = Convert.ToInt32(this.txtcodigo.Text.Trim());
+            else
+                return;
+            DataSet ds = new DataSet();
+            ds = bus_cliente.FilterbyID(cliente);
+            // if the dataset is filled, it means that there are data and we have to fill the fields
+            // if not empty the fields
+            if (utilites_presentation.isdataset_empty(ds) != true)
+            {
+                this.txtnombre.Text = ds.Tables[0].Rows[0]["nombre"].ToString();
+                this.txtapellido.Text = ds.Tables[0].Rows[0]["apellido"].ToString();
+                this.txtdireccion.Text = ds.Tables[0].Rows[0]["direccion"].ToString();
+                this.txttelefono.Text = ds.Tables[0].Rows[0]["telefono"].ToString();
+                this.txtemail.Text = ds.Tables[0].Rows[0]["email"].ToString();
+                this.chkestatus.Checked = Convert.ToBoolean(ds.Tables[0].Rows[0]["estatus"].ToString());
+            }
+            else
+            {
+                this.emptyfields_less_codigo();
+            }
+            
         }
     }
 }

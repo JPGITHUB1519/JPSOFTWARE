@@ -2,33 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using EntitiesLayer;
 using System.Data;
 using System.Data.SqlClient;
-using EntitiesLayer;
 
 namespace DataAccessLayer
 {
-    public class DCliente
+    public class DCategoria
     {
-        public string Act_Cliente(ECliente cliente)
+        public string Act_Categoria(ECategoria categoria)
         {
             string rpta = "";
+            DataSet ds = new DataSet();
+
             try
             {
-                DataSet ds = new DataSet();
-                // agregando parametros al metodo execute query
-                string query = "SP_ACTCLIENTE";
-                Dictionary<string, object> parameters = new Dictionary<string,object>();
-                parameters.Add("@idcliente", cliente.Idcliente);
-                parameters.Add("@nombre", cliente.Nombre);
-                parameters.Add("@apellido", cliente.Apellido);
-                parameters.Add("@direccion", cliente.Direccion);
-                parameters.Add("@telefono", cliente.Telefono);
-                parameters.Add("@email", cliente.Email);
-                parameters.Add("@estatus", cliente.Status);
+                string query = "SP_ACTCATEGORIA";
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("@idcategoria", categoria.Idcategoria);
+                parameters.Add("@categoria", categoria.Categoria);
+                parameters.Add("@descripcion", categoria.Descripcion);
                 ds = dbconnection.execute_query(query, parameters);
-
-                // if the query cannot be executed notify the error
                 if (ds == null)
                 {
                     rpta = "Error Insertando";
@@ -37,45 +31,43 @@ namespace DataAccessLayer
                 {
                     rpta = "REGISTRO REGISTRADO/ACTUALIZADO EXITOSAMENTE";
                 }
-    
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
- 
                 rpta = ex.Message;
             }
 
-            return rpta;  
+            return rpta;
         }
 
-        public string Delete_Cliente(ECliente cliente)
+        public string Delete_Categoria(ECategoria categoria)
         {
             string rpta;
             try
             {
                 DataSet ds = new DataSet();
-                string query = "SP_DELETE_CLIENTE";
+                string query = "SP_DELETE_CATEGORIA";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idcliente", cliente.Idcliente);
+                parameters.Add("@idcategoria", categoria.Idcategoria);
                 ds = dbconnection.execute_query(query, parameters);
                 rpta = "REGISTRO ELIMINADO EXITOSAMENTE";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 rpta = "ERROR";
             }
-            return rpta;  
+            return rpta;
         }
 
-        public DataSet Select_Cliente()
+        public DataSet Select_Categoria()
         {
             DataSet ds = new DataSet();
             try
             {
-                string query = "SP_SELECT_CLIENTE";
+                string query = "SP_SELECT_CATEGORIA";
                 ds = dbconnection.execute_query(query);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ds = null;
             }
@@ -83,15 +75,15 @@ namespace DataAccessLayer
             return ds;
         }
 
-        public DataSet FilterbyID(ECliente cliente)
+        public DataSet FilterbyID(ECategoria categoria)
         {
             DataSet ds = new DataSet();
 
             try
             {
-                string query = "SP_FILTERID_CLIENTE";
+                string query = "SP_FILTERID_CATEGORIA";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@idcliente", cliente.Idcliente);
+                parameters.Add("@idcategoria", categoria.Idcategoria);
                 ds = dbconnection.execute_query(query, parameters);
             }
             catch (Exception ex)
@@ -102,14 +94,14 @@ namespace DataAccessLayer
             return ds;
         }
 
-        public DataSet FilterByName(ECliente cliente)
+        public DataSet FilterByName(ECategoria categoria)
         {
             DataSet ds = new DataSet();
             try
             {
-                string query = "SP_FILTERBYNAME_CLIENTE";
+                string query = "SP_FILTERBYNAME_CATEGORIA";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("@nombre", cliente.Nombre);
+                parameters.Add("@categoria", categoria.Categoria);
                 ds = dbconnection.execute_query(query, parameters);
 
             }
@@ -120,9 +112,5 @@ namespace DataAccessLayer
 
             return ds;
         }
-
-
-
-        
     }
 }

@@ -16,7 +16,7 @@ namespace JPSOFTWARE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PMantCliente());
+            Application.Run(new PMantCategoria());
         }
     }
 }

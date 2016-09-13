@@ -15,3 +15,4 @@ C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\
 C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PMantBase.resources
 C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PMantCliente.resources
 C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.frmreporte.resources
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PMantCategoria.resources

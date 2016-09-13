@@ -191,6 +191,7 @@
             this.txtcodigo.TabIndex = 90;
             this.txtcodigo.validar = true;
             this.txtcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcodigo_KeyPress);
+            this.txtcodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodigo_Validating_1);
             // 
             // txtnombre
             // 

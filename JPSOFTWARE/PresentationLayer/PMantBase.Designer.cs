@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.label8 = new System.Windows.Forms.Label();
             this.tabplistado = new System.Windows.Forms.TabPage();
-            this.btnimprimir = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_buscar2 = new System.Windows.Forms.Button();
             this.tabpmantenimiento = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.errprov = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnbuscar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.errprov = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnimprimir = new System.Windows.Forms.Button();
+            this.btn_buscar2 = new System.Windows.Forms.Button();
             this.tabplistado.SuspendLayout();
             this.tabpmantenimiento.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,15 +77,6 @@
             this.tabplistado.Text = "Listado";
             this.tabplistado.UseVisualStyleBackColor = true;
             // 
-            // btnimprimir
-            // 
-            this.btnimprimir.Image = global::PresentationLayer.Properties.Resources.print;
-            this.btnimprimir.Location = new System.Drawing.Point(595, 6);
-            this.btnimprimir.Name = "btnimprimir";
-            this.btnimprimir.Size = new System.Drawing.Size(106, 72);
-            this.btnimprimir.TabIndex = 73;
-            this.btnimprimir.UseVisualStyleBackColor = true;
-            // 
             // txtbuscar
             // 
             this.txtbuscar.Location = new System.Drawing.Point(141, 30);
@@ -102,15 +93,6 @@
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Buscar";
-            // 
-            // btn_buscar2
-            // 
-            this.btn_buscar2.Image = global::PresentationLayer.Properties.Resources.search;
-            this.btn_buscar2.Location = new System.Drawing.Point(483, 6);
-            this.btn_buscar2.Name = "btn_buscar2";
-            this.btn_buscar2.Size = new System.Drawing.Size(106, 72);
-            this.btn_buscar2.TabIndex = 71;
-            this.btn_buscar2.UseVisualStyleBackColor = true;
             // 
             // tabpmantenimiento
             // 
@@ -137,6 +119,29 @@
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(6, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(737, 387);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "CAMBIAR";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabpmantenimiento);
+            this.tabControl1.Controls.Add(this.tabplistado);
+            this.tabControl1.Location = new System.Drawing.Point(35, 57);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(772, 587);
+            this.tabControl1.TabIndex = 44;
+            // 
+            // errprov
+            // 
+            this.errprov.ContainerControl = this;
             // 
             // btnbuscar
             // 
@@ -183,30 +188,24 @@
             this.btnNuevo.Size = new System.Drawing.Size(106, 72);
             this.btnNuevo.TabIndex = 7;
             this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // groupBox1
+            // btnimprimir
             // 
-            this.groupBox1.Location = new System.Drawing.Point(6, 26);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(737, 387);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "CAMBIAR";
+            this.btnimprimir.Image = global::PresentationLayer.Properties.Resources.print;
+            this.btnimprimir.Location = new System.Drawing.Point(595, 6);
+            this.btnimprimir.Name = "btnimprimir";
+            this.btnimprimir.Size = new System.Drawing.Size(106, 72);
+            this.btnimprimir.TabIndex = 73;
+            this.btnimprimir.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // btn_buscar2
             // 
-            this.tabControl1.Controls.Add(this.tabpmantenimiento);
-            this.tabControl1.Controls.Add(this.tabplistado);
-            this.tabControl1.Location = new System.Drawing.Point(35, 57);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(772, 587);
-            this.tabControl1.TabIndex = 44;
-            // 
-            // errprov
-            // 
-            this.errprov.ContainerControl = this;
+            this.btn_buscar2.Image = global::PresentationLayer.Properties.Resources.search;
+            this.btn_buscar2.Location = new System.Drawing.Point(483, 6);
+            this.btn_buscar2.Name = "btn_buscar2";
+            this.btn_buscar2.Size = new System.Drawing.Size(106, 72);
+            this.btn_buscar2.TabIndex = 71;
+            this.btn_buscar2.UseVisualStyleBackColor = true;
             // 
             // PMantBase
             // 
