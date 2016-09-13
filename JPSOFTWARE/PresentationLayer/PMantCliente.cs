@@ -207,5 +207,11 @@ namespace PresentationLayer
             }
             
         }
+
+        private void btnbuscar_Click_1(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = tabControl1.SelectedTab;
+            this.txtbuscar.Focus();
+        }
     }
 }

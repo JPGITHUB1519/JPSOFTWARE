@@ -75,6 +75,10 @@
             // 
             this.tabpmantenimiento.Click += new System.EventHandler(this.tabpmantenimiento_Click);
             // 
+            // btnbuscar
+            // 
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click_1);
+            // 
             // btneliminar
             // 
             this.btneliminar.Click += new System.EventHandler(this.button7_Click);
