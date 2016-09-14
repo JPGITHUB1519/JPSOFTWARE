@@ -106,5 +106,20 @@ namespace PresentationLayer
             // filling datagriview with filter data
             this.dgvdata.DataSource = bus_proveedor.FilterByName(proveedor).Tables[0];
         }
+
+        private void dgvdata_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.txtcodigo.Text = dgvdata.Rows[e.RowIndex].Cells["idproveedor"].Value.ToString();
+            this.txtnombre.Text = dgvdata.Rows[e.RowIndex].Cells["nombre"].Value.ToString();
+            this.txtdireccion.Text = dgvdata.Rows[e.RowIndex].Cells["direccion"].Value.ToString();
+            this.txttelefono.Text = dgvdata.Rows[e.RowIndex].Cells["telefono"].Value.ToString();
+            this.tabControl1.SelectedTab = this.tabpmantenimiento;
+            this.txtcodigo.Focus();
+        }
     }
 }

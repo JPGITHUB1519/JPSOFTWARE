@@ -162,6 +162,7 @@ namespace PresentationLayer
             this.txtemail.Text = dgvdata.Rows[e.RowIndex].Cells["email"].Value.ToString();
             this.chkestatus.Checked = Convert.ToBoolean(dgvdata.Rows[e.RowIndex].Cells["estatus"].Value);
             this.tabControl1.SelectedTab = this.tabpmantenimiento;
+            this.txtcodigo.Focus();
         }
 
         private void tabpmantenimiento_Click(object sender, EventArgs e)
