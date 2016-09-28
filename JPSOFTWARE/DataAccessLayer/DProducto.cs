@@ -24,13 +24,13 @@ namespace DataAccessLayer
                 parameters.Add("@nombre", producto.Nombre);
                 parameters.Add("@precio", producto.Precio);
                 parameters.Add("@stock", producto.Stock);
-                parameters.Add("@punto_reorden", producto.Idproducto);
+                parameters.Add("@punto_reorden", producto.Punto_reorden);
                 parameters.Add("@impuesto", producto.Impuesto);
 
                 ds = dbconnection.execute_query(query, parameters);
                 if (ds == null)
                 {
-                    rpta = "Error Insertando";
+                    rpta = ds.ToString();
                 }
                 else
                 {
@@ -86,7 +86,7 @@ namespace DataAccessLayer
 
             try
             {
-                string query = "SP_FILTERID_PRODCUTO";
+                string query = "SP_FILTERBYID_PRODUCTO";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@idproducto", producto.Idproducto);
                 ds = dbconnection.execute_query(query, parameters);

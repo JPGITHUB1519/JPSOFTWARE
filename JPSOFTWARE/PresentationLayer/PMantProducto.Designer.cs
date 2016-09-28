@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvdata = new System.Windows.Forms.DataGridView();
             this.txtcodcategoria = new PresentationLayer.jptextbox(this.components);
             this.txtcodigo = new PresentationLayer.jptextbox(this.components);
             this.label7 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errprov)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -62,16 +62,33 @@
             // 
             // tabplistado
             // 
-            this.tabplistado.Controls.Add(this.dataGridView1);
+            this.tabplistado.Controls.Add(this.dgvdata);
+            this.tabplistado.Size = new System.Drawing.Size(847, 561);
             this.tabplistado.Controls.SetChildIndex(this.btn_buscar2, 0);
             this.tabplistado.Controls.SetChildIndex(this.label2, 0);
             this.tabplistado.Controls.SetChildIndex(this.txtbuscar, 0);
             this.tabplistado.Controls.SetChildIndex(this.btnimprimir, 0);
-            this.tabplistado.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.tabplistado.Controls.SetChildIndex(this.dgvdata, 0);
+            // 
+            // btn_buscar2
+            // 
+            this.btn_buscar2.Click += new System.EventHandler(this.btn_buscar2_Click);
             // 
             // tabpmantenimiento
             // 
             this.tabpmantenimiento.Size = new System.Drawing.Size(847, 561);
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox1
             // 
@@ -98,13 +115,14 @@
             // 
             this.tabControl1.Size = new System.Drawing.Size(855, 587);
             // 
-            // dataGridView1
+            // dgvdata
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(656, 428);
-            this.dataGridView1.TabIndex = 74;
+            this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvdata.Location = new System.Drawing.Point(45, 110);
+            this.dgvdata.Name = "dgvdata";
+            this.dgvdata.Size = new System.Drawing.Size(656, 428);
+            this.dgvdata.TabIndex = 74;
+            this.dgvdata.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellDoubleClick);
             // 
             // txtcodcategoria
             // 
@@ -121,6 +139,7 @@
             this.txtcodigo.Size = new System.Drawing.Size(191, 20);
             this.txtcodigo.TabIndex = 94;
             this.txtcodigo.validar = true;
+            this.txtcodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodigo_Validating);
             // 
             // label7
             // 
@@ -266,7 +285,7 @@
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errprov)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,7 +293,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvdata;
         private jptextbox txtimpuesto;
         public System.Windows.Forms.Label label10;
         private jptextbox txtpuntreo;

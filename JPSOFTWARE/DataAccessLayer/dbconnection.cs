@@ -75,6 +75,34 @@ namespace DataAccessLayer
 
             return ds;
         }
+        // this is for see the error in testing mode
+        public static DataSet execute_query_testing(string query, Dictionary<string, object> parameters)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = DataAccessLayer.Properties.Settings.Default.cn;
+            SqlCommand cmd = new SqlCommand();
+            DataSet ds = new DataSet();
+
+
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = query;
+            if (parameters != null)
+            {
+                // adding parameters to the commands
+                foreach (KeyValuePair<string, object> kvp in parameters)
+                {
+                    cmd.Parameters.Add(new SqlParameter(kvp.Key, kvp.Value));
+                }
+            }
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+
+
+            return ds;
+        }
 
         // the same execute method but overrided for no parameters query
         public static DataSet execute_query(string query)
@@ -104,5 +132,6 @@ namespace DataAccessLayer
 
             return ds;
         }
+
     }
 }

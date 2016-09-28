@@ -83,7 +83,7 @@ namespace PresentationLayer
         private void btneliminar_Click(object sender, EventArgs e)
         {
             EProveedor proveedor = new EProveedor();
-            proveedor = get_data();
+            proveedor.Idproveedor = Convert.ToInt32(this.txtcodigo.Text.Trim());
             string rpta = bus_proveedor.Delete_proveedor(proveedor);
             utilites_presentation.mensaje_ok(rpta);
             this.fill_grid();
@@ -120,6 +120,11 @@ namespace PresentationLayer
             this.txttelefono.Text = dgvdata.Rows[e.RowIndex].Cells["telefono"].Value.ToString();
             this.tabControl1.SelectedTab = this.tabpmantenimiento;
             this.txtcodigo.Focus();
+        }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

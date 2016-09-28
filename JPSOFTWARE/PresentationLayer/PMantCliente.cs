@@ -101,7 +101,7 @@ namespace PresentationLayer
         private void button7_Click(object sender, EventArgs e)
         {
             ECliente cliente = new ECliente();
-            cliente = get_data();
+            cliente.Idcliente = Convert.ToInt32(this.txtcodigo.Text.Trim());
             string rpta = bus_cliente.Delete_Cliente(cliente);
             utilites_presentation.mensaje_ok(rpta);
             this.fill_grid();
@@ -213,6 +213,11 @@ namespace PresentationLayer
         {
             this.tabControl1.SelectedTab = tabControl1.SelectedTab;
             this.txtbuscar.Focus();
+        }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -198,6 +198,7 @@
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.Size = new System.Drawing.Size(656, 328);
             this.dgvdata.TabIndex = 74;
+            this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentDoubleClick);
             this.dgvdata.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellDoubleClick);
             // 

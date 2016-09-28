@@ -140,6 +140,7 @@
             this.txtcodigo.Size = new System.Drawing.Size(191, 20);
             this.txtcodigo.TabIndex = 96;
             this.txtcodigo.validar = true;
+            this.txtcodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodigo_Validating);
             // 
             // label7
             // 

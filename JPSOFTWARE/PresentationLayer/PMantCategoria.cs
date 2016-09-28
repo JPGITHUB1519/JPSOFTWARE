@@ -103,7 +103,7 @@ namespace PresentationLayer
         private void btneliminar_Click(object sender, EventArgs e)
         {
             ECategoria categoria = new ECategoria();
-            categoria = get_data();
+            categoria.Idcategoria = Convert.ToInt32(this.txtcodigo.Text.Trim());
             string rpta = bus_categoria.Delete_categoria(categoria);
             utilites_presentation.mensaje_ok(rpta);
             this.fill_grid();
@@ -123,6 +123,32 @@ namespace PresentationLayer
             this.txtcategoria.Text = dgvdata.Rows[e.RowIndex].Cells["categoria"].Value.ToString();
             this.txtdescripcion.Text = dgvdata.Rows[e.RowIndex].Cells["descripcion"].Value.ToString();
             this.tabControl1.SelectedTab = this.tabpmantenimiento;
+        }
+
+        private void txtcodigo_Validating(object sender, CancelEventArgs e)
+        {
+            // fill customer data in validate method
+            ECategoria categoria = new ECategoria();
+            // if txt codigo is empty go out
+            if (txtcodigo.Text != string.Empty)
+                categoria.Idcategoria = Convert.ToInt32(this.txtcodigo.Text.Trim());
+            else
+                return;
+            DataSet ds = new DataSet();
+            ds = bus_categoria.FilterbyID(categoria);
+            // if the dataset is filled, it means that there are data and we have to fill the fields
+            // if not empty the fields
+            if (utilites_presentation.isdataset_empty(ds) != true)
+            {
+                this.txtcodigo.Text = ds.Tables[0].Rows[0]["idproducto"].ToString();
+                this.txtcategoria.Text = ds.Tables[0].Rows[0]["categoria"].ToString();
+                this.txtdescripcion.Text = ds.Tables[0].Rows[0]["descripcion"].ToString();
+
+            }
+            else
+            {
+                this.emptyfields_less_codigo();
+            }
         }
     }
 }
