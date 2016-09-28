@@ -127,6 +127,7 @@ namespace PresentationLayer
 
         private void txtcodigo_Validating(object sender, CancelEventArgs e)
         {
+            /*
             // fill customer data in validate method
             ECategoria categoria = new ECategoria();
             // if txt codigo is empty go out
@@ -149,6 +150,12 @@ namespace PresentationLayer
             {
                 this.emptyfields_less_codigo();
             }
+             * */
+        }
+
+        private void txtcodigo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
