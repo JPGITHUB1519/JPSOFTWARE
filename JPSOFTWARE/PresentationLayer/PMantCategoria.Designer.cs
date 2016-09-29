@@ -53,7 +53,7 @@
             // tabplistado
             // 
             this.tabplistado.Controls.Add(this.dgvdata);
-            this.tabplistado.Size = new System.Drawing.Size(764, 376);
+            this.tabplistado.Size = new System.Drawing.Size(764, 624);
             this.tabplistado.Controls.SetChildIndex(this.btn_buscar2, 0);
             this.tabplistado.Controls.SetChildIndex(this.label2, 0);
             this.tabplistado.Controls.SetChildIndex(this.txtbuscar, 0);
@@ -66,7 +66,7 @@
             // 
             // tabpmantenimiento
             // 
-            this.tabpmantenimiento.Size = new System.Drawing.Size(764, 376);
+            this.tabpmantenimiento.Size = new System.Drawing.Size(764, 624);
             this.tabpmantenimiento.Click += new System.EventHandler(this.tabpmantenimiento_Click);
             // 
             // groupBox2
@@ -106,7 +106,7 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Size = new System.Drawing.Size(772, 402);
+            this.tabControl1.Size = new System.Drawing.Size(772, 650);
             // 
             // dgvdata
             // 
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 487);
+            this.ClientSize = new System.Drawing.Size(800, 819);
             this.Name = "PMantCategoria";
             this.Text = "PCategoria";
             this.Load += new System.EventHandler(this.PCategoria_Load);

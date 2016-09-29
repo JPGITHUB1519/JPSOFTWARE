@@ -32,9 +32,7 @@
             this.dgvdata = new System.Windows.Forms.DataGridView();
             this.txtcodcategoria = new PresentationLayer.jptextbox(this.components);
             this.txtcodigo = new PresentationLayer.jptextbox(this.components);
-            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtcodproveedor = new PresentationLayer.jptextbox(this.components);
             this.txtnombre = new PresentationLayer.jptextbox(this.components);
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +44,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtimpuesto = new PresentationLayer.jptextbox(this.components);
             this.label10 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.tabplistado.SuspendLayout();
             this.tabpmantenimiento.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -92,6 +92,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.linkLabel2);
+            this.groupBox1.Controls.Add(this.linkLabel1);
             this.groupBox1.Controls.Add(this.txtimpuesto);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtpuntreo);
@@ -103,13 +105,12 @@
             this.groupBox1.Controls.Add(this.txtnombre);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtcodproveedor);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtcodcategoria);
             this.groupBox1.Controls.Add(this.txtcodigo);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Size = new System.Drawing.Size(835, 331);
             this.groupBox1.Text = "Impuesto";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tabControl1
             // 
@@ -141,16 +142,6 @@
             this.txtcodigo.validar = true;
             this.txtcodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodigo_Validating);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 107);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 20);
-            this.label7.TabIndex = 93;
-            this.label7.Text = "Cod.Categoria";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -160,16 +151,6 @@
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 92;
             this.label3.Text = "Codigo";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 162);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 20);
-            this.label1.TabIndex = 96;
-            this.label1.Text = "Cod.Proveedor";
             // 
             // txtcodproveedor
             // 
@@ -269,6 +250,30 @@
             this.label10.TabIndex = 106;
             this.label10.Text = "Impuesto";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.linkLabel1.Location = new System.Drawing.Point(33, 109);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(108, 20);
+            this.linkLabel1.TabIndex = 108;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Cod.categoria";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.linkLabel2.Location = new System.Drawing.Point(33, 164);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(113, 20);
+            this.linkLabel2.TabIndex = 109;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Cod.proveedor";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // PMantProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,10 +310,10 @@
         private jptextbox txtnombre;
         public System.Windows.Forms.Label label4;
         private jptextbox txtcodproveedor;
-        public System.Windows.Forms.Label label1;
         private jptextbox txtcodcategoria;
         private jptextbox txtcodigo;
-        public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

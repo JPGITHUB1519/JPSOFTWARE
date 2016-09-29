@@ -165,5 +165,36 @@ namespace PresentationLayer
             utilites_presentation.mensaje_ok(rpta);
             this.fill_grid();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PConsCategoria doform = new PConsCategoria();
+
+            if (doform.ShowDialog() == DialogResult.OK)
+            {
+                int pos = doform.dgvdata.CurrentCell.RowIndex;
+
+                txtcodcategoria.Text = doform.dgvdata.Rows[pos].Cells["idcategoria"].Value.ToString();
+                txtcodcategoria.Focus();
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PConsProveedor doform = new PConsProveedor();
+
+            if (doform.ShowDialog() == DialogResult.OK)
+            {
+                int pos = doform.dgvdata.CurrentCell.RowIndex;
+
+                txtcodproveedor.Text = doform.dgvdata.Rows[pos].Cells["idproveedor"].Value.ToString();
+                txtcodproveedor.Focus();
+            }
+        }
     }
 }
