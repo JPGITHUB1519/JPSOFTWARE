@@ -125,5 +125,33 @@ namespace PresentationLayer
         {
 
         }
+
+        private void txtcodigo_Validating(object sender, CancelEventArgs e)
+        {
+            // fill customer data in validate method
+            EProveedor proveedor = new EProveedor();
+            // if txt codigo is empty go out
+            if (txtcodigo.Text != string.Empty)
+                proveedor.Idproveedor = Convert.ToInt32(this.txtcodigo.Text.Trim());
+            else
+                return;
+            DataSet ds = new DataSet();
+            ds = bus_proveedor.FilterbyID(proveedor);
+            // if the dataset is filled, it means that there are data and we have to fill the fields
+            // if not empty the fields
+            if (utilites_presentation.isdataset_empty(ds) != true)
+            {
+                this.txtcodigo.Text = ds.Tables[0].Rows[0]["idproveedor"].ToString();
+                this.txtnombre.Text = ds.Tables[0].Rows[0]["nombre"].ToString();
+                this.txtdireccion.Text =  ds.Tables[0].Rows[0]["direccion"].ToString();
+                this.txttelefono.Text = ds.Tables[0].Rows[0]["telefono"].ToString();
+                this.chkestatus.Checked = Convert.ToBoolean(ds.Tables[0].Rows[0]["estatus"]);
+
+            }
+            else
+            {
+                this.empty_fields_less_codigo();
+            }
+        }
     }
 }

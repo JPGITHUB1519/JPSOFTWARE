@@ -88,7 +88,7 @@ namespace DataAccessLayer
 
             try
             {
-                string query = "SP_FILTERID_PROVEEDOR";
+                string query = "SP_FILTERBYID_PROVEEDOR";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@idproveedor", proveedor.Idproveedor);
                 ds = dbconnection.execute_query(query, parameters);

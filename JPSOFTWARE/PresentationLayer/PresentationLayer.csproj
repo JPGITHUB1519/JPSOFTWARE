@@ -75,6 +75,12 @@
     <Compile Include="PConstBase.Designer.cs">
       <DependentUpon>PConstBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="PFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PFacturacion.Designer.cs">
+      <DependentUpon>PFacturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="PMantCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="PConstBase.resx">
       <DependentUpon>PConstBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PFacturacion.resx">
+      <DependentUpon>PFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PMantCategoria.resx">
       <DependentUpon>PMantCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +194,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facturation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listquit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

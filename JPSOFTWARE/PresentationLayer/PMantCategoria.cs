@@ -127,7 +127,7 @@ namespace PresentationLayer
 
         private void txtcodigo_Validating(object sender, CancelEventArgs e)
         {
-            /*
+           
             // fill customer data in validate method
             ECategoria categoria = new ECategoria();
             // if txt codigo is empty go out
@@ -141,7 +141,7 @@ namespace PresentationLayer
             // if not empty the fields
             if (utilites_presentation.isdataset_empty(ds) != true)
             {
-                this.txtcodigo.Text = ds.Tables[0].Rows[0]["idproducto"].ToString();
+                this.txtcodigo.Text = ds.Tables[0].Rows[0]["idcategoria"].ToString();
                 this.txtcategoria.Text = ds.Tables[0].Rows[0]["categoria"].ToString();
                 this.txtdescripcion.Text = ds.Tables[0].Rows[0]["descripcion"].ToString();
 
@@ -150,7 +150,7 @@ namespace PresentationLayer
             {
                 this.emptyfields_less_codigo();
             }
-             * */
+            
         }
 
         private void txtcodigo_TextChanged(object sender, EventArgs e)

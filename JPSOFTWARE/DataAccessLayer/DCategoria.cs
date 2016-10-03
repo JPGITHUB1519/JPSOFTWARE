@@ -81,7 +81,7 @@ namespace DataAccessLayer
 
             try
             {
-                string query = "SP_FILTERID_CATEGORIA";
+                string query = "SP_FILTERBYID_CATEGORIA";
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@idcategoria", categoria.Idcategoria);
                 ds = dbconnection.execute_query(query, parameters);
