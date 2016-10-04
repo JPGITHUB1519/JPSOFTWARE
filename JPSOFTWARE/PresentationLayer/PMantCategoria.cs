@@ -92,7 +92,17 @@ namespace PresentationLayer
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedTab = this.tabplistado;
+            PConsCategoria doform = new PConsCategoria();
+
+            if (doform.ShowDialog() == DialogResult.OK)
+            {
+                int pos = doform.dgvdata.CurrentCell.RowIndex;
+                txtcodigo.Text = doform.dgvdata.Rows[pos].Cells["idcategoria"].Value.ToString();
+                txtcategoria.Text = doform.dgvdata.Rows[pos].Cells["categoria"].Value.ToString();
+                txtdescripcion.Text = doform.dgvdata.Rows[pos].Cells["descripcion"].Value.ToString();
+          
+                txtcodigo.Focus();
+            }
         }
 
         private void btnsalir_Click(object sender, EventArgs e)

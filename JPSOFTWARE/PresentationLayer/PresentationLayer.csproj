@@ -63,6 +63,18 @@
     <Compile Include="PConsCategoria.Designer.cs">
       <DependentUpon>PConsCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="PConsCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PConsCliente.Designer.cs">
+      <DependentUpon>PConsCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PConsProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PConsProducto.Designer.cs">
+      <DependentUpon>PConsProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="PConsProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PConsCategoria.resx">
       <DependentUpon>PConsCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PConsCliente.resx">
+      <DependentUpon>PConsCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PConsProducto.resx">
+      <DependentUpon>PConsProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PConsProveedor.resx">
       <DependentUpon>PConsProveedor.cs</DependentUpon>

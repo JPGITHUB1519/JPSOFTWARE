@@ -173,6 +173,7 @@ namespace PresentationLayer
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            
             PConsCategoria doform = new PConsCategoria();
 
             if (doform.ShowDialog() == DialogResult.OK)
@@ -182,6 +183,7 @@ namespace PresentationLayer
                 txtcodcategoria.Text = doform.dgvdata.Rows[pos].Cells["idcategoria"].Value.ToString();
                 txtcodcategoria.Focus();
             }
+             
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -194,6 +196,26 @@ namespace PresentationLayer
 
                 txtcodproveedor.Text = doform.dgvdata.Rows[pos].Cells["idproveedor"].Value.ToString();
                 txtcodproveedor.Focus();
+            }
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            PConsProducto doform = new PConsProducto();
+
+            if (doform.ShowDialog() == DialogResult.OK)
+            {
+                int pos = doform.dgvdata.CurrentCell.RowIndex;
+                txtcodigo.Text = doform.dgvdata.Rows[pos].Cells["idproducto"].Value.ToString();
+                txtcodcategoria.Text = doform.dgvdata.Rows[pos].Cells["idcategoria"].Value.ToString();
+                txtcodproveedor.Text = doform.dgvdata.Rows[pos].Cells["idproveedor"].Value.ToString();
+                txtnombre.Text = doform.dgvdata.Rows[pos].Cells["nombre"].Value.ToString();
+                txtprecio.Text = doform.dgvdata.Rows[pos].Cells["precio"].Value.ToString();
+                txtstock.Text = doform.dgvdata.Rows[pos].Cells["stock"].Value.ToString();
+                txtpuntreo.Text = doform.dgvdata.Rows[pos].Cells["punto_reorden"].Value.ToString();
+                txtimpuesto.Text = doform.dgvdata.Rows[pos].Cells["impuesto"].Value.ToString();
+                
+  
             }
         }
     }

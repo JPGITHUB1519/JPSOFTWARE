@@ -153,5 +153,19 @@ namespace PresentationLayer
                 this.empty_fields_less_codigo();
             }
         }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            PConsProveedor doform = new PConsProveedor();
+
+            if (doform.ShowDialog() == DialogResult.OK)
+            {
+                int pos = doform.dgvdata.CurrentCell.RowIndex;
+                txtcodigo.Text = doform.dgvdata.Rows[pos].Cells["idproveedor"].Value.ToString();
+                txtnombre.Text = doform.dgvdata.Rows[pos].Cells["nombre"].Value.ToString();
+                txtdireccion.Text = doform.dgvdata.Rows[pos].Cells["direccion"].Value.ToString();
+                txttelefono.Text = doform.dgvdata.Rows[pos].Cells["telefono"].Value.ToString();
+            }
+        }
     }
 }

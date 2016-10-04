@@ -75,6 +75,10 @@
             // 
             this.groupBox2.Location = new System.Drawing.Point(102, 312);
             // 
+            // btnbuscar
+            // 
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
+            // 
             // btneliminar
             // 
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);

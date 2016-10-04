@@ -53,7 +53,7 @@
             // dgvdata
             // 
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdata.Location = new System.Drawing.Point(71, 165);
+            this.dgvdata.Location = new System.Drawing.Point(125, 246);
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.Size = new System.Drawing.Size(662, 375);
             this.dgvdata.TabIndex = 82;

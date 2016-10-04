@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using EntitiesLayer;
 using BusinessLogicLayer;
+
 namespace PresentationLayer
 {
     public partial class PConsCategoria : PConstBase
@@ -26,7 +27,7 @@ namespace PresentationLayer
 
         public void ok()
         {
-             // ok
+            // ok
             if (dgvdata.Rows.Count == 0 || dgvdata.Rows[0].Cells[0].Value == null)
             {
                 return;
@@ -65,5 +66,16 @@ namespace PresentationLayer
         {
             this.consultar();
         }
+
+        private void dgvdata_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            this.ok();
+        }
+
+        private void btnbuscar_Click_1(object sender, EventArgs e)
+        {
+            this.ok();
+        }
+ 
     }
 }

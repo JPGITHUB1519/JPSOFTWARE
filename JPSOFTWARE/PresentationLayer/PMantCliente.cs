@@ -211,8 +211,20 @@ namespace PresentationLayer
 
         private void btnbuscar_Click_1(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedTab = tabControl1.SelectedTab;
-            this.txtbuscar.Focus();
+            PConsCliente doform = new PConsCliente();
+
+            if (doform.ShowDialog() == DialogResult.OK)
+            {
+                int pos = doform.dgvdata.CurrentCell.RowIndex;
+                txtcodigo.Text = doform.dgvdata.Rows[pos].Cells["idcliente"].Value.ToString();
+                txtnombre.Text = doform.dgvdata.Rows[pos].Cells["nombre"].Value.ToString();
+                txtapellido.Text = doform.dgvdata.Rows[pos].Cells["apellido"].Value.ToString();
+                txtdireccion.Text = doform.dgvdata.Rows[pos].Cells["direccion"].Value.ToString();
+                txttelefono.Text = doform.dgvdata.Rows[pos].Cells["telefono"].Value.ToString();
+                txtemail.Text = doform.dgvdata.Rows[pos].Cells["email"].Value.ToString();
+                chkestatus.Checked = Convert.ToBoolean(doform.dgvdata.Rows[pos].Cells["estatus"].Value.ToString());
+                txtcodigo.Focus();
+            }
         }
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)

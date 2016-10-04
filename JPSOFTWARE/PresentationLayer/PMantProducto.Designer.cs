@@ -78,6 +78,10 @@
             // 
             this.tabpmantenimiento.Size = new System.Drawing.Size(847, 561);
             // 
+            // btnbuscar
+            // 
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
+            // 
             // btneliminar
             // 
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);

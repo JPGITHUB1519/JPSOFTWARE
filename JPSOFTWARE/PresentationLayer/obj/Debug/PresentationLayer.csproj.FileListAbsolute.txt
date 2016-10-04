@@ -18,6 +18,9 @@ C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\
 C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PMantCategoria.resources
 C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PMantProveedor.resources
 C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PMantProducto.resources
-C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PConsCategoria.resources
 C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PConstBase.resources
 C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PConsProveedor.resources
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PFacturacion.resources
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PConsCliente.resources
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PConsCategoria.resources
+C:\Users\Programador\Desktop\JP SOFTWARE\JPSOFTWARE\PresentationLayer\obj\Debug\PresentationLayer.PConsProducto.resources
