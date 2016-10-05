@@ -37,6 +37,14 @@ namespace PresentationLayer
             Close();
         }
 
+        private void consultar()
+        {
+            EProducto producto = new EProducto();
+            producto.Nombre = this.txtbuscar.Text.Trim();
+            this.dgvdata.DataSource = bus_producto.FilterByName(producto).Tables[0];
+            this.txtbuscar.Focus();
+        }
+
         private void PConsProducto_Load(object sender, EventArgs e)
         {
             this.fill_grid();
@@ -50,6 +58,11 @@ namespace PresentationLayer
         private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             this.ok();
+        }
+
+        private void btn_buscar2_Click(object sender, EventArgs e)
+        {
+            this.consultar();
         }
     }
 }

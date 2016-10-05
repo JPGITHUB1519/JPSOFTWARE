@@ -42,12 +42,18 @@
             this.dgvdata = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.codpro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nompro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prevent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnprocesar = new System.Windows.Forms.Button();
-            this.txtotal = new PresentationLayer.jptextbox(this.components);
+            this.txttotal = new PresentationLayer.jptextbox(this.components);
             this.txtcantvent = new PresentationLayer.jptextbox(this.components);
             this.txtprevent = new PresentationLayer.jptextbox(this.components);
             this.txtnompro = new PresentationLayer.jptextbox(this.components);
@@ -145,6 +151,7 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Cod.Pro";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.linkLabel2.Validating += new System.ComponentModel.CancelEventHandler(this.linkLabel2_Validating);
             // 
             // label7
             // 
@@ -178,8 +185,15 @@
             // 
             // dgvdata
             // 
+            this.dgvdata.AllowUserToAddRows = false;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdata.Location = new System.Drawing.Point(25, 342);
+            this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codpro,
+            this.nompro,
+            this.prevent,
+            this.cantidad,
+            this.Importe});
+            this.dgvdata.Location = new System.Drawing.Point(36, 398);
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.Size = new System.Drawing.Size(1236, 413);
             this.dgvdata.TabIndex = 110;
@@ -188,7 +202,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(938, 772);
+            this.label9.Location = new System.Drawing.Point(938, 825);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 20);
             this.label9.TabIndex = 111;
@@ -201,12 +215,47 @@
             this.groupBox3.Controls.Add(this.btnsalir);
             this.groupBox3.Controls.Add(this.btncancelar);
             this.groupBox3.Controls.Add(this.btnprocesar);
-            this.groupBox3.Location = new System.Drawing.Point(257, 827);
+            this.groupBox3.Location = new System.Drawing.Point(273, 859);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(584, 122);
             this.groupBox3.TabIndex = 113;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Acciones";
+            // 
+            // codpro
+            // 
+            this.codpro.HeaderText = "Codigo Producto";
+            this.codpro.Name = "codpro";
+            // 
+            // nompro
+            // 
+            this.nompro.HeaderText = "Nombre Producto";
+            this.nompro.Name = "nompro";
+            // 
+            // prevent
+            // 
+            this.prevent.HeaderText = "Precio Venta";
+            this.prevent.Name = "prevent";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
+            // Importe
+            // 
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            // 
+            // button1
+            // 
+            this.button1.Image = global::PresentationLayer.Properties.Resources.add;
+            this.button1.Location = new System.Drawing.Point(36, 304);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 72);
+            this.button1.TabIndex = 114;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnbuscar
             // 
@@ -225,6 +274,7 @@
             this.btneliminar.Size = new System.Drawing.Size(106, 72);
             this.btneliminar.TabIndex = 8;
             this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnsalir
             // 
@@ -243,6 +293,7 @@
             this.btncancelar.Size = new System.Drawing.Size(106, 72);
             this.btncancelar.TabIndex = 10;
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnprocesar
             // 
@@ -253,13 +304,13 @@
             this.btnprocesar.TabIndex = 7;
             this.btnprocesar.UseVisualStyleBackColor = true;
             // 
-            // txtotal
+            // txttotal
             // 
-            this.txtotal.Location = new System.Drawing.Point(1003, 772);
-            this.txtotal.Name = "txtotal";
-            this.txtotal.Size = new System.Drawing.Size(191, 20);
-            this.txtotal.TabIndex = 112;
-            this.txtotal.validar = true;
+            this.txttotal.Location = new System.Drawing.Point(1016, 827);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(191, 20);
+            this.txttotal.TabIndex = 112;
+            this.txttotal.validar = true;
             // 
             // txtcantvent
             // 
@@ -292,6 +343,7 @@
             this.txtcodpro.Size = new System.Drawing.Size(191, 20);
             this.txtcodpro.TabIndex = 107;
             this.txtcodpro.validar = true;
+            this.txtcodpro.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodpro_Validating);
             // 
             // txtnomcli
             // 
@@ -308,6 +360,7 @@
             this.txtcodcli.Size = new System.Drawing.Size(191, 20);
             this.txtcodcli.TabIndex = 107;
             this.txtcodcli.validar = true;
+            this.txtcodcli.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodcli_Validating);
             // 
             // jptextbox1
             // 
@@ -322,8 +375,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1273, 1006);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.txtotal);
+            this.Controls.Add(this.txttotal);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dgvdata);
             this.Controls.Add(this.groupBox2);
@@ -362,7 +416,7 @@
         public System.Windows.Forms.Label label2;
         private jptextbox txtcodpro;
         private System.Windows.Forms.DataGridView dgvdata;
-        private jptextbox txtotal;
+        private jptextbox txttotal;
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.Button btnbuscar;
@@ -372,5 +426,11 @@
         public System.Windows.Forms.Button btnprocesar;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codpro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nompro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prevent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        public System.Windows.Forms.Button button1;
     }
 }

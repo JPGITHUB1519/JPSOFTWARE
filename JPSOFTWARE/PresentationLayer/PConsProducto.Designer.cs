@@ -33,6 +33,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
+            // btn_buscar2
+            // 
+            this.btn_buscar2.Click += new System.EventHandler(this.btn_buscar2_Click);
+            // 
             // btnbuscar
             // 
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);

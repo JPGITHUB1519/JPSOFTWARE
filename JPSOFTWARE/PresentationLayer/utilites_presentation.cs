@@ -76,5 +76,12 @@ namespace PresentationLayer
                 return false;
             }
         }
+
+        public static bool isdgvempty(DataGridView dgv)
+        {
+            if (dgv.Rows.Count == 0)
+                return true;
+            return false;
+        }
     }
 }
